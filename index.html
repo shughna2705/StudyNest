@@ -56,7 +56,13 @@
         </div>
       </form>
 
-      <ul id="taskList" class="task-list">
+     <div class="task-filters">
+  <button type="button" class="filter-button active" data-filter="all">All</button>
+  <button type="button" class="filter-button" data-filter="pending">Pending</button>
+  <button type="button" class="filter-button" data-filter="completed">Completed</button>
+</div>
+
+<ul id="taskList" class="task-list">
         <li class="empty-state">Your study journey starts here. Add a task!</li>
       </ul>
     </section>

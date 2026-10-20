@@ -8,6 +8,7 @@ const completedTasks = document.getElementById("completedTasks");
 const remainingTasks = document.getElementById("remainingTasks");
 
 let tasks = JSON.parse(localStorage.getItem("studynest-tasks")) || [];
+let currentFilter = "all";
 
 function updateStats() {
   totalTasks.textContent = tasks.length;
@@ -35,7 +36,13 @@ function renderTasks() {
     return;
   }
 
-  tasks.forEach(task => {
+ const filteredTasks = tasks.filter(task => {
+  if (currentFilter === "pending") return !task.completed;
+  if (currentFilter === "completed") return task.completed;
+  return true;
+});
+
+filteredTasks.forEach(task => {
     const item = document.createElement("li");
     item.className = "task-item";
 
@@ -98,3 +105,14 @@ taskForm.addEventListener("submit", event => {
 });
 
 renderTasks();
+document.querySelectorAll(".filter-button").forEach(button => {
+  button.addEventListener("click", () => {
+    currentFilter = button.dataset.filter;
+
+    document.querySelectorAll(".filter-button").forEach(item => {
+      item.classList.toggle("active", item === button);
+    });
+
+    renderTasks();
+  });
+});
