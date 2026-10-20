@@ -1,0 +1,71 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="StudyNest helps students organize their study tasks and goals.">
+  <title>StudyNest | Student Study Planner</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <a class="logo" href="#">StudyNest</a>
+    <nav>
+      <a href="#dashboard">Dashboard</a>
+      <a href="#tasks">My Tasks</a>
+    </nav>
+  </header>
+
+  <main class="container" id="dashboard">
+    <section class="welcome">
+      <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
+      <h1>Make room for <span>great things.</span></h1>
+      <p>Organize your studies, focus on your goals, and make every day count.</p>
+    </section>
+
+    <section class="stats" aria-label="Study statistics">
+      <article class="stat-card">
+        <p>Total Tasks</p>
+        <h2 id="totalTasks">0</h2>
+      </article>
+      <article class="stat-card">
+        <p>Completed</p>
+        <h2 id="completedTasks">0</h2>
+      </article>
+      <article class="stat-card">
+        <p>Remaining</p>
+        <h2 id="remainingTasks">0</h2>
+      </article>
+    </section>
+
+    <section class="task-section" id="tasks">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">STAY ON TRACK</p>
+          <h2>My study tasks</h2>
+        </div>
+      </div>
+
+      <form id="taskForm">
+        <label for="taskInput">What do you need to study?</label>
+        <div class="task-input-row">
+          <input id="taskInput" type="text"
+            placeholder="e.g. Revise Machine Learning" required>
+          <button type="submit">Add task</button>
+        </div>
+      </form>
+
+      <ul id="taskList" class="task-list">
+        <li class="empty-state">Your study journey starts here. Add a task!</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    <p>StudyNest — Small steps, big progress.</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
