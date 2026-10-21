@@ -117,6 +117,10 @@ Screenshots of the running application will be added below to demonstrate its in
 ### Study Analytics
 ![StudyNest Study Analytics](screenshots/study-analytics.png.png)
 
+### Productivity Trend
+![StudyNest Productivity Trend](screenshots/productivity_trend.png.png)
+
+
 ## 9. Development History
 
 - Created the initial StudyNest website.
