@@ -4,73 +4,427 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="StudyNest helps students organize their study tasks and goals.">
-  <title>StudyNest | Student Study Planner</title>
+  <meta name="theme-color" content="#f7f6f2">
+  <meta name="description" content="StudyNest is your personal academic command center for focused study, planning, and progress.">
+  <title>StudyNest — Your Learning Space</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
-    <a class="logo" href="#">StudyNest</a>
-    <nav>
-      <a href="#dashboard">Dashboard</a>
-      <a href="#tasks">My Tasks</a>
-    </nav>
-  </header>
+  <div class="app-shell">
 
-  <main class="container" id="dashboard">
-    <section class="welcome">
-      <p class="eyebrow">YOUR PERSONAL STUDY SPACE</p>
-      <h1>Make room for <span>great things.</span></h1>
-      <p>Organize your studies, focus on your goals, and make every day count.</p>
-    </section>
+    <aside class="sidebar">
+      <a class="brand" href="#dashboard">
+        <span class="brand-mark">s.</span>
+        <span>studynest<span class="brand-period">.</span></span>
+      </a>
 
-    <section class="stats" aria-label="Study statistics">
-      <article class="stat-card">
-        <p>Total Tasks</p>
-        <h2 id="totalTasks">0</h2>
-      </article>
-      <article class="stat-card">
-        <p>Completed</p>
-        <h2 id="completedTasks">0</h2>
-      </article>
-      <article class="stat-card">
-        <p>Remaining</p>
-        <h2 id="remainingTasks">0</h2>
-      </article>
-    </section>
+      <p class="sidebar-label">YOUR WORKSPACE</p>
 
-    <section class="task-section" id="tasks">
-      <div class="section-heading">
-        <div>
-          <p class="eyebrow">STAY ON TRACK</p>
-          <h2>My study tasks</h2>
+      <nav class="side-nav" aria-label="Main navigation">
+        <a class="nav-link active" href="#dashboard">
+          <span class="nav-icon">⌂</span>
+          <span>Overview</span>
+        </a>
+        <a class="nav-link" href="#tasks">
+          <span class="nav-icon">▤</span>
+          <span>Study planner</span>
+        </a>
+        <a class="nav-link" href="#focus">
+          <span class="nav-icon">◷</span>
+          <span>Focus space</span>
+          <span class="nav-tag">Soon</span>
+        </a>
+        <a class="nav-link" href="#insights">
+          <span class="nav-icon">↗</span>
+          <span>My progress</span>
+          <span class="nav-tag">Soon</span>
+        </a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="sidebar-note">
+          <span class="note-sparkle">✳</span>
+          <p class="note-title">A little reminder</p>
+          <p class="note-copy">You don't have to do everything today. Just the next right thing.</p>
         </div>
+        <p class="sidebar-footer">MADE FOR YOUR NEXT CHAPTER</p>
       </div>
+    </aside>
 
-      <form id="taskForm">
-        <label for="taskInput">What do you need to study?</label>
-        <div class="task-input-row">
-          <input id="taskInput" type="text"
-            placeholder="e.g. Revise Machine Learning" required>
-          <button type="submit">Add task</button>
+    <main class="main-content" id="dashboard">
+
+      <header class="topbar">
+        <div class="breadcrumb">MY SPACE <span>/</span> OVERVIEW</div>
+        <div class="topbar-right">
+          <span class="status-dot"></span>
+          <span class="topbar-caption">Your personal learning space</span>
+          <div class="avatar" aria-label="Student profile">S</div>
         </div>
-      </form>
+      </header>
 
-     <div class="task-filters">
-  <button type="button" class="filter-button active" data-filter="all">All</button>
-  <button type="button" class="filter-button" data-filter="pending">Pending</button>
-  <button type="button" class="filter-button" data-filter="completed">Completed</button>
-</div>
+      <section class="welcome-panel">
+        <div class="welcome-copy">
+          <p class="eyebrow"><span class="eyebrow-line"></span> YOUR SPACE TO GROW</p>
+          <h1>Make space for<br>your <span>next big thing.</span></h1>
+          <p class="welcome-description">
+            A calmer way to plan your studies, find your focus,
+            and turn small steps into real progress.
+          </p>
+          <a class="primary-link" href="#tasks">
+            Plan your day <span>↗</span>
+          </a>
+        </div>
 
-<ul id="taskList" class="task-list">
-        <li class="empty-state">Your study journey starts here. Add a task!</li>
-      </ul>
-    </section>
-  </main>
+        <div class="welcome-art" aria-hidden="true">
+          <div class="art-orbit orbit-one"></div>
+          <div class="art-orbit orbit-two"></div>
+          <div class="art-sun"></div>
+          <div class="art-book book-back"></div>
+          <div class="art-book book-front">
+            <span class="book-line"></span>
+            <span class="book-line short"></span>
+            <span class="book-flower">✳</span>
+          </div>
+          <div class="art-star star-one">✳</div>
+          <div class="art-star star-two">✦</div>
+          <div class="art-caption">GROW AT YOUR OWN PACE</div>
+        </div>
+      </section>
 
-  <footer>
-    <p>StudyNest — Small steps, big progress.</p>
-  </footer>
+      <section class="section-block" aria-label="Your study overview">
+        <div class="section-title-row">
+          <div>
+            <p class="eyebrow">THE BIG PICTURE</p>
+            <h2>Your study overview<span class="title-period">.</span></h2>
+          </div>
+          <span class="section-caption">One step at a time</span>
+        </div>
+
+        <div class="stats-grid">
+          <article class="stat-card stat-total">
+            <div class="stat-top">
+              <span class="stat-label">ALL YOUR TASKS</span>
+              <span class="stat-symbol">▤</span>
+            </div>
+            <div class="stat-number" id="totalTasks">0</div>
+            <p class="stat-description">Everything on your plate</p>
+            <div class="stat-bottom-line"></div>
+          </article>
+
+          <article class="stat-card stat-complete">
+            <div class="stat-top">
+              <span class="stat-label">ALREADY DONE</span>
+              <span class="stat-symbol">✓</span>
+            </div>
+            <div class="stat-number" id="completedTasks">0</div>
+            <p class="stat-description">Little wins count, too</p>
+            <div class="stat-bottom-line"></div>
+          </article>
+
+          <article class="stat-card stat-remaining">
+            <div class="stat-top">
+              <span class="stat-label">STILL TO EXPLORE</span>
+              <span class="stat-symbol">↗</span>
+            </div>
+            <div class="stat-number" id="remainingTasks">0</div>
+            <p class="stat-description">Your next opportunities</p>
+            <div class="stat-bottom-line"></div>
+          </article>
+        </div>
+      </section>
+
+      <section class="workspace-grid">
+
+        <section class="task-section panel" id="tasks">
+          <div class="panel-heading">
+            <div>
+              <p class="eyebrow">YOUR NEXT STEPS</p>
+              <h2>The study planner<span class="title-period">.</span></h2>
+              <p class="panel-description">Get it out of your head and into your plan.</p>
+            </div>
+            <span class="heading-decoration" aria-hidden="true">✳</span>
+          </div>
+
+          <form id="taskForm" class="task-form">
+            <label for="taskInput">What would you like to work on?</label>
+            <div class="task-input-row">
+              <span class="input-symbol" aria-hidden="true">＋</span>
+              <input
+                id="taskInput"
+                type="text"
+                placeholder="e.g. Understand neural networks..."
+                maxlength="160"
+                required
+              >
+              <button type="submit" class="add-button">Add task <span>↗</span></button>
+            </div>
+          </form>
+
+          <div class="task-list-heading">
+            <h3>Your task list</h3>
+            <span class="list-caption">One thing at a time</span>
+          </div>
+
+          <div class="task-filters" aria-label="Filter tasks">
+            <button type="button" class="filter-button active" data-filter="all" aria-pressed="true">Everything</button>
+            <button type="button" class="filter-button" data-filter="pending" aria-pressed="false">To do</button>
+            <button type="button" class="filter-button" data-filter="completed" aria-pressed="false">Completed</button>
+          </div>
+
+          <ul id="taskList" class="task-list" aria-live="polite">
+            <li class="empty-state">Your study journey starts here. Add a task!</li>
+          </ul>
+        </section>
+
+        <aside class="right-column">
+
+          <section class="daily-card" id="focus">
+            <div class="daily-card-top">
+              <span class="daily-label">A THOUGHT FOR TODAY</span>
+              <span class="daily-sparkle">✳</span>
+            </div>
+            <div class="quote-mark">“</div>
+            <blockquote>
+              Progress is built in the quiet moments when you choose to keep going.
+            </blockquote>
+            <div class="quote-divider"></div>
+            <p class="quote-footer">A NOTE TO YOUR FUTURE SELF</p>
+          </section>
+
+          
+<section class="focus-preview panel" id="focus">
+  <div class="mini-panel-heading">
+    <div>
+      <p class="eyebrow">YOUR PERSONAL STUDY TIMER</p>
+      <h2>Focus Lab</h2>
+    </div>
+    <span class="mini-icon">◷</span>
+  </div>
+
+  <p class="focus-preview-copy">
+    One focused session at a time. You’ve got this!
+  </p>
+
+  <div class="focus-timer">
+    <div class="timer-mode" id="timerMode">FOCUS SESSION</div>
+    <div class="timer-display" id="timerDisplay" role="timer"
+      aria-live="off">25:00</div>
+    <p class="timer-message" id="timerMessage">
+      Ready when you are.
+    </p>
+  </div>
+
+  <div class="timer-modes">
+    <button type="button" class="timer-mode-button active"
+      data-minutes="25" data-mode="focus">Focus · 25 min</button>
+    <button type="button" class="timer-mode-button"
+      data-minutes="5" data-mode="break">Short break · 5 min</button>
+  </div>
+
+  <div class="timer-controls">
+    <button type="button" class="timer-start-button" id="timerStart">
+      Start focus
+    </button>
+    <button type="button" class="timer-reset-button" id="timerReset">
+      Reset
+    </button>
+  </div>
+
+  <p class="timer-session-count">
+    Sessions completed: <strong id="sessionsCompleted">0</strong>
+  </p>
+</section>
+
+
+          <section class="insight-preview panel" id="insights">
+            <div class="mini-panel-heading">
+              <div>
+                <p class="eyebrow">YOUR GROWTH</p>
+                <h2>Progress, your way</h2>
+              </div>
+              <span class="mini-icon">↗</span>
+            </div>
+            <p class="focus-preview-copy">
+              Discover your study patterns, celebrate consistency, and see how far you've come.
+            </p>
+            <div class="insight-decoration" aria-hidden="true">
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+              <span></span><span></span><span></span><span></span><span></span>
+            </div>
+          </section>
+
+        </aside>
+      </section>
+
+<!-- ===== StudyNest Distraction Tracker ===== -->
+<section class="distraction-panel panel" id="distractions">
+  <div class="mini-panel-heading">
+    <div>
+      <p class="eyebrow">UNDERSTAND YOUR HABITS</p>
+      <h2>Distraction Tracker</h2>
+    </div>
+    <span class="mini-icon">◉</span>
+  </div>
+
+  <p class="distraction-intro">
+    Notice what pulls you away from studying. Small patterns reveal
+    big opportunities to improve.
+  </p>
+
+  <div class="distraction-stats">
+    <div class="distraction-stat">
+      <span>Total interruptions</span>
+      <strong id="totalInterruptions">0</strong>
+    </div>
+    <div class="distraction-stat">
+      <span>Estimated time lost</span>
+      <strong id="totalTimeLost">0 min</strong>
+    </div>
+    <div class="distraction-stat">
+      <span>Top distraction</span>
+      <strong id="topDistraction">None yet</strong>
+    </div>
+  </div>
+
+  <form id="distractionForm" class="distraction-form">
+    <h3>Log an interruption</h3>
+
+    <label for="distractionType">What distracted you?</label>
+    <select id="distractionType" required>
+      <option value="">Choose a distraction</option>
+      <option value="Social media">Social media</option>
+      <option value="Phone notifications">Phone notifications</option>
+      <option value="People or noise">People or noise</option>
+      <option value="Tiredness">Tiredness</option>
+      <option value="Procrastination">Procrastination</option>
+      <option value="Other">Other</option>
+    </select>
+
+    <div class="distraction-input-row">
+      <div>
+        <label for="interruptionCount">Number of interruptions</label>
+        <input id="interruptionCount" type="number"
+          min="1" max="100" value="1" required />
+      </div>
+      <div>
+        <label for="minutesLost">Minutes lost</label>
+        <input id="minutesLost" type="number"
+          min="0" max="1440" value="5" required />
+      </div>
+    </div>
+
+    <label for="distractionNote">Optional note</label>
+    <input id="distractionNote" type="text"
+      maxlength="120" placeholder="e.g. Checked messages while revising" />
+
+    <button type="submit" class="distraction-submit">
+      + Log distraction
+    </button>
+  </form>
+
+  <div class="distraction-history">
+    <div class="mini-panel-heading">
+      <div>
+        <p class="eyebrow">YOUR PATTERNS</p>
+        <h3>Distraction breakdown</h3>
+      </div>
+    </div>
+
+    <div id="distractionInsights" class="distraction-insights">
+      Your distraction insights will appear here after you log an entry.
+    </div>
+
+    <ul id="distractionList" class="distraction-list"></ul>
+  </div>
+</section>
+<!-- ===== End Distraction Tracker ===== -->
+
+<!-- ===== StudyNest Analytics Dashboard ===== -->
+<section class="analytics-panel panel" id="analytics">
+  <div class="mini-panel-heading">
+    <div>
+      <p class="eyebrow">YOUR LEARNING JOURNEY</p>
+      <h2>Study Analytics</h2>
+    </div>
+    <span class="mini-icon">↗</span>
+  </div>
+
+  <p class="analytics-intro">
+    A clearer picture of your focus, progress, and study habits.
+  </p>
+
+  <div class="analytics-summary">
+    <article class="analytics-stat">
+      <span>Tasks completed</span>
+      <strong id="analyticsTasksCompleted">0</strong>
+      <small id="analyticsTaskRate">0% completion rate</small>
+    </article>
+
+    <article class="analytics-stat">
+      <span>Focus sessions</span>
+      <strong id="analyticsFocusSessions">0</strong>
+      <small>Completed in Focus Lab</small>
+    </article>
+
+    <article class="analytics-stat">
+      <span>Estimated time lost</span>
+      <strong id="analyticsTimeLost">0 min</strong>
+      <small>Based on logged distractions</small>
+    </article>
+
+    <article class="analytics-stat">
+      <span>Interruptions</span>
+      <strong id="analyticsInterruptions">0</strong>
+      <small>Recorded in your tracker</small>
+    </article>
+  </div>
+
+  <div class="analytics-chart-card">
+    <div class="mini-panel-heading">
+      <div>
+        <p class="eyebrow">ACTIVITY OVER TIME</p>
+        <h3>Your productivity trend</h3>
+      </div>
+    </div>
+
+    <p class="analytics-chart-description">
+      Completed tasks and focus sessions recorded on each day.
+    </p>
+
+    <div id="analyticsChart" class="analytics-chart"
+      role="img" aria-label="Daily study activity chart">
+      Your activity chart will appear here.
+    </div>
+
+    <div class="analytics-legend">
+      <span><i class="legend-dot tasks-dot"></i>Tasks completed</span>
+      <span><i class="legend-dot focus-dot"></i>Focus sessions</span>
+    </div>
+  </div>
+
+  <div class="analytics-insight-card">
+    <p class="eyebrow">YOUR INSIGHT</p>
+    <h3 id="analyticsInsightTitle">Your journey starts here</h3>
+    <p id="analyticsInsightText">
+      Complete a task or a focus session to start building your study insights.
+    </p>
+  </div>
+</section>
+<!-- ===== End StudyNest Analytics ===== -->
+
+      <footer class="page-footer">
+        <a class="footer-brand" href="#dashboard">studynest<span>.</span></a>
+        <p>Small steps. Softer days. Bigger possibilities.</p>
+        <a href="#dashboard" class="back-to-top">BACK TO TOP ↑</a>
+      </footer>
+
+    </main>
+  </div>
 
   <script src="script.js"></script>
 </body>
