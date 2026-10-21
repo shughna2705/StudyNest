@@ -106,16 +106,16 @@ The current workflow checks essential file presence. It does not replace manual 
 Screenshots of the running application will be added below to demonstrate its interface and features.
 
 ### Main Dashboard
-![StudyNest Main Dashboard](screenshots/dashboard.png)
+![StudyNest Main Dashboard](screenshots/dashboard.png.png)
 
 ### Focus Lab
-![StudyNest Focus Lab](screenshots/focus-lab.png)
+![StudyNest Focus Lab](screenshots/focus-lab.png.png)
 
 ### Distraction Tracker
-![StudyNest Distraction Tracker](screenshots/distraction-tracker.png)
+![StudyNest Distraction Tracker](screenshots/distraction-tracker.png.png)
 
 ### Study Analytics
-![StudyNest Study Analytics](screenshots/study-analytics.png)
+![StudyNest Study Analytics](screenshots/study-analytics.png.png)
 
 ## 9. Development History
 
